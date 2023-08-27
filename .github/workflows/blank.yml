@@ -1,7 +1,6 @@
 name: Python linters and tests
 
-# on: [push, pull_request]
-on: workflow_dispatch
+on: [push, pull_request]
 
 jobs:
   build:
@@ -20,7 +19,9 @@ jobs:
       - name: Install mypy and pytest
         run: |
           python -m pip install --upgrade pip
-          pip install mypy mypy-extensions pytest pytest-env
+          pip install mypy mypy-extensions
+          mypy --install-types --non-interactive
+          pip install pytest pytest-env
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
       - name: Lint with mypy
         run: |
