@@ -5,7 +5,7 @@ from utils.schemas import Coordinates, Weather
 
 
 def main() -> None:
-    coordinates: Coordinates = get_coordinates()
+    coordinates: int = get_coordinates()
     weather: Weather = get_weather_by_coordinates(coordinates=coordinates)
     pretty_print_weather(weather=weather)
 
