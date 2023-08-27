@@ -27,7 +27,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest pytest-env mypy
-          mypy --install-types --non-interactive
       - name: Run linter with mypy
         run: |
           mypy .
