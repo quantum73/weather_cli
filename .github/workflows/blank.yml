@@ -10,6 +10,7 @@ jobs: #Начало секции джобов
         run: echo "Hello world!" #Команда, которая будет выполнена в терминале
 
   print_full_technical_info: #Начало секции второй джобы
+    needs: print_hello
     runs-on: ubuntu-latest #Среда выполнения джоба
     
     steps: #Начало секции шагов
@@ -17,6 +18,7 @@ jobs: #Начало секции джобов
         run: sudo lshw #Команда, которая будет выполнена в терминале
 
   print_short_technical_info: #Начало секции третий джобы
+    needs: print_full_technical_info
     runs-on: ubuntu-latest #Среда выполнения джоба
     
     steps: #Начало секции шагов
