@@ -25,13 +25,12 @@ jobs:
       - name: Install mypy and pytest
         run: |
           python -m pip install --upgrade pip
-          pip install mypy
+          pip install -r requirements.txt
+          pip install pytest pytest-env mypy
           mypy --install-types --non-interactive
-          pip install pytest pytest-env
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      - name: Lint with mypy
+      - name: Run linter with mypy
         run: |
           mypy .
-      - name: Test with pytest
+      - name: Run test with pytest
         run: |
-          pytest ./tests
+          pytest .
