@@ -4,3 +4,6 @@ exclude = ['venv', '.venv', 'env', '.env']
 
 [tool.pytest.ini_options]
 addopts = "--tb=line -s -v -p no:cacheprovider"
+env = [
+    "OPEN_WEATHER_API_KEY=your_api_key_or_create_env_file_with_api_key"
+]
