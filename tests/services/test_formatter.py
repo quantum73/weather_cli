@@ -1,9 +1,9 @@
-from services.printing import pretty_print_weather
+from services.formatter import format_weather
 from utils.enums import WeatherTitle
 from utils.schemas import Weather
 
 
-def test_pretty_print_weather(capfd):
+def test_pretty_print_weather():
     weather = Weather(
         temperature=20,
         weather_title=WeatherTitle.clear,
@@ -15,12 +15,6 @@ def test_pretty_print_weather(capfd):
         f"Температура: {weather.temperature}°C\n"
         f"На улице: {weather.weather_title.value}"
     )
-    target_output = target_output.strip()
+    weather_as_str = format_weather(weather=weather)
 
-    pretty_print_weather(weather=weather)
-    out, err = capfd.readouterr()
-    out, err = out.strip(), err.strip()
-
-    assert len(err) == 0
-    assert len(out) > 0
-    assert out == target_output
+    assert weather_as_str == target_output

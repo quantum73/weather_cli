@@ -1,1 +1,1 @@
-from . import coordinates, printing, weather_api
+from . import coordinates, formatter, weather_api

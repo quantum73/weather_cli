@@ -17,8 +17,8 @@ class CoordinatesSourceProtocol(Protocol):
 
 
 class PlugSource(CoordinatesSourceProtocol):
-    latitude = 55.673768
-    longitude = 37.760422
+    latitude = 55.755864
+    longitude = 37.617698
 
     @classmethod
     def get_coordinates(cls) -> Coordinates:
