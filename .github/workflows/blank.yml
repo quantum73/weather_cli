@@ -28,7 +28,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install pytest pytest-env mypy
+          pip install pytest pytest-env pytest-mock mypy
       - name: Run linter with mypy
         run: |
           mypy .

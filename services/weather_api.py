@@ -1,5 +1,6 @@
 import requests
 from requests import Response
+from requests.exceptions import RequestException
 
 from config import WEATHER_API_URL, HEADERS, GETTING_KEY_ERROR_MESSAGE
 from utils.enums import WeatherTitle
@@ -46,7 +47,7 @@ def _get_json_data_from_weather_api(*, coordinates: Coordinates) -> dict:
     url = WEATHER_API_URL.format(latitude=coordinates.latitude, longitude=coordinates.longitude)
     try:
         response: Response = requests.get(url, headers=HEADERS)
-    except requests.RequestException:
+    except RequestException:
         raise ApiServiceError("Something wrong with weather API :(")
 
     try:

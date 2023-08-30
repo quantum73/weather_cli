@@ -29,10 +29,10 @@ class ConsoleSource(CoordinatesSourceProtocol):
 
     @classmethod
     def get_coordinates(cls) -> Coordinates:
-        latitude = input("Enter your latitude: ")
-        longitude = input("Enter your longitude: ")
-        latitude = _parse_coordinate(coordinate_value=latitude)
-        longitude = _parse_coordinate(coordinate_value=longitude)
+        lat = input("Enter your latitude: ")
+        lon = input("Enter your longitude: ")
+        latitude = _parse_coordinate(coordinate_value=lat)
+        longitude = _parse_coordinate(coordinate_value=lon)
         return Coordinates(longitude=longitude, latitude=latitude)
 
 
