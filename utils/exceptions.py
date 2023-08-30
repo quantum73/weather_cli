@@ -1,2 +1,6 @@
-class ApiException(Exception):
+class CantGetCoordinates(Exception):
+    pass
+
+
+class ApiServiceError(Exception):
     pass

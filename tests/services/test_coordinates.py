@@ -1,12 +1,12 @@
-from services.coordinates import get_coordinates
+from services.coordinates import get_coordinates, PlugSource
 from utils.schemas import Coordinates
 
 
 class TestCoordinates:
 
     def test_get_coordinates(self):
-        coordinates = get_coordinates()
+        coordinates = get_coordinates(coordinates_source=PlugSource)
 
         assert isinstance(coordinates, Coordinates)
-        assert isinstance(coordinates.longitude, float)
-        assert isinstance(coordinates.latitude, float)
+        assert coordinates.longitude == PlugSource.longitude
+        assert coordinates.latitude == PlugSource.latitude

@@ -22,3 +22,4 @@ WEATHER_API_URL = (
         "lat={latitude}&lon={longitude}&lang=ru"
         "&appid=" + API_KEY + "&units=metric"
 )
+GETTING_KEY_ERROR_MESSAGE = "Error in retrieving data from JSON"
