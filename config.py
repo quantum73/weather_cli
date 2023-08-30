@@ -4,8 +4,6 @@ from typing import TypeAlias, Mapping, MutableMapping, Any
 
 from dotenv import dotenv_values
 
-from utils.exceptions import EnvironmentVariableError
-
 ConfigMap: TypeAlias = Mapping[str, str | None] | MutableMapping[str, Any]
 
 ENV_PATH = Path("./.env")
@@ -17,7 +15,7 @@ HEADERS = {
 DATETIME_FORMAT = "%H:%M %d.%m.%Y"
 API_KEY = config.get("OPEN_WEATHER_API_KEY")
 if API_KEY is None:
-    raise EnvironmentVariableError("API KEY is not set")
+    raise EnvironmentError("Environment variable API_KEY is not set")
 
 WEATHER_API_URL = (
         "https://api.openweathermap.org/data/2.5/weather?"
