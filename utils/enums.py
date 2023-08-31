@@ -24,3 +24,16 @@ class WeatherTitle(str, Enum):
         _data = {item.name: item for item in cls}
         value = _data.get(key, cls.unknown)
         return value
+
+
+class CoordinatesInputType(str, Enum):
+    plug = "plug"
+    console = "console"
+
+    @classmethod
+    def to_str(cls) -> str:
+        return ', '.join([item.value for item in cls])
+
+    @classmethod
+    def choices(cls):
+        return [item.value for item in cls]

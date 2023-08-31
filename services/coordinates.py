@@ -12,8 +12,9 @@ def _parse_coordinate(*, coordinate_value: str | float | int) -> float:
 
 
 class CoordinatesSourceProtocol(Protocol):
-    def get_coordinates(self) -> Coordinates:
-        raise NotImplemented
+    @classmethod
+    def get_coordinates(cls) -> Coordinates:
+        raise NotImplementedError
 
 
 class PlugSource(CoordinatesSourceProtocol):
@@ -36,5 +37,5 @@ class ConsoleSource(CoordinatesSourceProtocol):
         return Coordinates(longitude=longitude, latitude=latitude)
 
 
-def get_coordinates(coordinates_source: CoordinatesSourceProtocol = PlugSource) -> Coordinates:
+def get_coordinates(coordinates_source: CoordinatesSourceProtocol) -> Coordinates:
     return coordinates_source.get_coordinates()

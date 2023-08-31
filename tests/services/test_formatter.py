@@ -9,11 +9,14 @@ def test_pretty_print_weather():
         weather_title=WeatherTitle.clear,
         geo_name="Moscow"
     )
+    delimiter = "-" * 40
     target_output = (
+        f"{delimiter}\n"
         f"Дата и время: {weather.now_datetime}\n"
         f"Место: {weather.geo_name}\n"
         f"Температура: {weather.temperature}°C\n"
-        f"На улице: {weather.weather_title.value}"
+        f"На улице: {weather.weather_title.value}\n"
+        f"{delimiter}"
     )
     weather_as_str = format_weather(weather=weather)
 

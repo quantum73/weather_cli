@@ -1,7 +1,16 @@
-# weather_cli
+## Консольная программы для определения погода по координатам
 
-Execute `python3 main.py` or `python main.py` command in root project dir. 
+Запустите в корневой директории репозитория команду `python3 main.py --help` 
+или `python main.py --help` для просмотра информации об аргументах программы:
 
-Console output:
+![help output](./help_output.png)
 
-![output example](./output_example.png)
+Пример запуска программы с вводом-"заглушкой" (`plug`):
+
+![plug output](./plug_output.png)
+
+**_P.S. "Заглушка" имеет координаты центра Москвы._**
+
+Пример запуска программы с вводом с консоли (`console`):
+
+![console output](./console_output.png)
